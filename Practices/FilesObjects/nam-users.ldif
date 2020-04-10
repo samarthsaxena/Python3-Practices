@@ -1,0 +1,242 @@
+version: 1
+
+dn: cn=testuser01,o=novell
+changetype: add
+uid: testuser01
+givenName: Test User 1
+fullName: Test User 1
+Language: ENGLISH
+sn: User
+mail: testuser01@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser01
+ACL: 2#subtree#cn=testuser01,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser01,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser01,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser02,o=novell
+changetype: add
+uid: testuser02
+givenName: Test User 2
+fullName: Test User 2
+Language: ENGLISH
+sn: User
+mail: testuser02@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser02
+ACL: 2#subtree#cn=testuser02,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser02,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser02,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser03,o=novell
+changetype: add
+uid: testuser03
+givenName: Test User 3
+fullName: Test User 3
+Language: ENGLISH
+sn: User
+mail: testuser03@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser03
+ACL: 2#subtree#cn=testuser03,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser03,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser03,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser04,o=novell
+changetype: add
+uid: testuser04
+givenName: Test User 4
+fullName: Test User 4
+Language: ENGLISH
+sn: User
+mail: testuser04@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser04
+ACL: 2#subtree#cn=testuser04,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser04,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser04,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser05,o=novell
+changetype: add
+uid: testuser05
+givenName: Test User 5
+fullName: Test User 5
+Language: ENGLISH
+sn: User
+mail: testuser05@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser05
+ACL: 2#subtree#cn=testuser05,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser05,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser05,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser06,o=novell
+changetype: add
+uid: testuser06
+givenName: Test User 6
+fullName: Test User 6
+Language: ENGLISH
+sn: User
+mail: testuser06@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser06
+ACL: 2#subtree#cn=testuser06,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser06,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser06,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser07,o=novell
+changetype: add
+uid: testuser07
+givenName: Test User 7
+fullName: Test User 7
+Language: ENGLISH
+sn: User
+mail: testuser07@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser07
+ACL: 2#subtree#cn=testuser07,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser07,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser07,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser08,o=novell
+changetype: add
+uid: testuser08
+givenName: Test User 8
+fullName: Test User 8
+Language: ENGLISH
+sn: User
+mail: testuser08@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser08
+ACL: 2#subtree#cn=testuser08,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser08,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser08,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser09,o=novell
+changetype: add
+uid: testuser09
+givenName: Test User 9
+fullName: Test User 9
+Language: ENGLISH
+sn: User
+mail: testuser09@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser09
+ACL: 2#subtree#cn=testuser09,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser09,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser09,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
+dn: cn=testuser010,o=novell
+changetype: add
+uid: testuser010
+givenName: Test User 10
+fullName: Test User 10
+Language: ENGLISH
+sn: User
+mail: testuser010@microfocus.test
+telephoneNumber: 69333
+passwordAllowChange: TRUE
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: Person
+objectClass: ndsLoginProperties
+objectClass: Top
+cn: testuser010
+ACL: 2#subtree#cn=testuser010,o=novell#[All Attributes Rights]
+ACL: 6#entry#cn=testuser010,o=novell#loginScript
+ACL: 2#entry#[Public]#messageServer
+ACL: 2#entry#[Root]#groupMembership
+ACL: 6#entry#cn=testuser010,o=novell#printJobConfiguration
+ACL: 2#entry#[Root]#networkAddress
+userpassword: novell
+
