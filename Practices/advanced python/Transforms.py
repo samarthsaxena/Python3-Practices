@@ -35,7 +35,7 @@ def main():
     # define some sample sequence to operate upon
     num = [1, 8, 4, 5, 13, 26, 381, 410, 58, 47]
     chars = "abcDeFGHiJklmnoP"
-    grandes = (81, 89, 94, 78, 61, 66, 99, 74)
+    grades = (81, 89, 94, 78, 61, 66, 99, 74)
 
     # TODO : user filter to remove items from the list
     odds = list(filter(filterFunction, num))
@@ -50,10 +50,15 @@ def main():
     print(f'{squares}')
 
     # TODO : use sorted and map to change numbers to grade
-    sorted_grades = sorted(grandes)
-    grandes_letters = list(map(toGrade, sorted_grades))
-    print(f'{grandes_letters}')
+    sorted_grades = sorted(grades)
+    grades_letters = list(map(toGrade, sorted_grades))
+    print(f'{grades_letters}', end="\t")
+    print("")
+    for i_tuple in zip(sorted_grades, grades_letters):
+        print(f'{i_tuple}')
 
     # Run
     # if __name__ == '__main__':   # from Python 3 we don't need to include this line.
+
+
 main()
