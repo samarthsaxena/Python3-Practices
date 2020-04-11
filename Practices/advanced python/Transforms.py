@@ -54,7 +54,6 @@ def main():
     grandes_letters = list(map(toGrade, sorted_grades))
     print(f'{grandes_letters}')
 
-
-# Run
-if __name__ == '__main__':
-    main()
+    # Run
+    # if __name__ == '__main__':   # from Python 3 we don't need to include this line.
+main()
