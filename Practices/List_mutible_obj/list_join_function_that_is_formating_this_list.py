@@ -11,4 +11,4 @@ print(courses_str[0])
 
 
 courses_str_temp = '* * *'.join(courses)
-print(courses_str_temp
+print(courses_str_temp)
