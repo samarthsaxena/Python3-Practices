@@ -85,9 +85,9 @@ def login():
     return render_template('login.html', title='Login Form', form=form)
 
 
-@app.route("/test")
-def testpage():
-    return render_template('testpage.html', title='')
+# @app.route("/test")
+# def testpage():
+#     return render_template('testpage.html', title='Test Page')
 
 
 if __name__ == '__main__':
