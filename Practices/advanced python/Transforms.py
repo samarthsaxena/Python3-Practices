@@ -27,8 +27,8 @@ def toGrade(x: int) -> str:
         return "C"
     elif 70 > x >= 65:
         return "D"
-    else:
-        return "F"
+
+    return "F"
 
 
 def main():
