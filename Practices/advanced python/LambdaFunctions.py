@@ -22,7 +22,13 @@ def main():
     # Use lambda to do the same job
     print("Now using lambda functions")
     print("F to C (lambda)", list(map(lambda t: (t - 32) * 5 / 9, ftemp)))
-    print("C to F (lambda)", list(map(lambda t:  (t * 9 / 5) + 32, ctemp)))
+    print("C to F (lambda)", list(map(lambda t: (t * 9 / 5) + 32, ctemp)))
+
+    # Test Stuff
+    x = 1
+    y = 2
+    z = (lambda x, y: x > y)
+    print(lambda x, y: x < y)
 
 
 if __name__ == '__main__':
