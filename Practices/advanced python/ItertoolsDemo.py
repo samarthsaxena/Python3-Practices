@@ -1,8 +1,9 @@
 # Advanced iteration functions in the itertools module
 
 import itertools as iter
+
+
 # https://docs.python.org/3/library/itertools.html
-import random
 
 
 def testFunction(x):
@@ -46,7 +47,7 @@ def main():
 
     # TODO : accumulate creates an iterator that accumulates values
     # vals = [i for i in range(10, 51, 10)]
-    vals = [10, 20, 31, 40, 50, 40, 30,42]
+    vals = [10, 20, 31, 40, 50, 40, 30, 42]
     acc = iter.accumulate(vals)
     acc_max = iter.accumulate(vals, max)
     print(f' By default accumulate generate the sum but we can change that.')
@@ -64,12 +65,25 @@ def main():
     chain_of_letters = iter.chain("AbcDFea", "123244345")
     print(list(chain_of_words_from_lists))  # ['Joe', 'John', 'Mike', 10, 20, 30, 40, 50, 40, 30]
     print(list(chain_of_letters))  # ['A', 'b', 'c', 'D', 'F', 'e', 'a', '1', '2', '3', '2', '4', '4', '3', '4', '5']
+    """
+    List Flattening
+    ----------------
+You can quickly and easily flatten a list using itertools.chain.from_iterable from the itertools package. Here is a simple example:
+
+a_list = [[1, 2], [3, 4], [5, 6]]
+print(list(itertools.chain.from_iterable(a_list)))
+# Output: [1, 2, 3, 4, 5, 6]
+
+# or
+print(list(itertools.chain(*a_list)))
+# Output: [1, 2, 3, 4, 5, 6]
+    """
 
     # TODO : itertools provides 2 filtering functions which are dropwhile and takewhile
     # these 2 keep on executing until a condition is met
     print(f'Example for dropwhile and takewhile')
-    print("dropwhile: ", list(iter.dropwhile(testFunction, vals))) # dropwhile:  [40, 50, 40, 30, 42]
-    print("takewhile: ", list(iter.takewhile(testFunction, vals))) # takewhile:  [10, 20, 31]
+    print("dropwhile: ", list(iter.dropwhile(testFunction, vals)))  # dropwhile:  [40, 50, 40, 30, 42]
+    print("takewhile: ", list(iter.takewhile(testFunction, vals)))  # takewhile:  [10, 20, 31]
 
 
 if __name__ == '__main__':
