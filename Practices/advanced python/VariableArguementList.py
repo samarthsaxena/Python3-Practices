@@ -1,7 +1,7 @@
 # Demonstrate the variable argument list
 
 # TODO : define a function that takes variable arguement list
-def addition(*args):
+def addition( *args):
     number_of_args = len(args)
     result = 0
     for arg in args:
