@@ -1,5 +1,5 @@
 # Demonstrate the variable argument list
-
+#https://book.pythontips.com/en/latest/args_and_kwargs.html
 # TODO : define a function that takes variable arguement list
 def addition( *args):
     number_of_args = len(args)
