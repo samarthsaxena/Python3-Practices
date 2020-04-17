@@ -1,6 +1,10 @@
 """
 Class for BOLD, UNDERLINE and Coloured stuffs
+This class can be used a constants container that can be used for printing
+different coloured strings
 """
+
+
 class Colour:
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
