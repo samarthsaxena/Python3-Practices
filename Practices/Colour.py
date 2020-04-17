@@ -6,6 +6,10 @@ different coloured strings
 
 
 class Colour:
+    """
+    This class can be used a constants container that can be used for printing
+    different coloured strings
+    """
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
     DARKCYAN = '\033[36m'
