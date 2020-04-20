@@ -1,12 +1,12 @@
 # demo the usage of OrderedDict object
 
+
+# One of the downsides of ordinary dictionary is; it does NOT keep the track of order of items in which they're
+# inserted.The concept of OrderedDict has been externalized that can cope with such bottleneck
+
 from collections import OrderedDict as od
 
 from Practices.Colour import Colour
-
-"""
-Some fun stuffs
-"""
 
 
 
