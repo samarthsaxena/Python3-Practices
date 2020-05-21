@@ -44,14 +44,14 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8">
-            {% with messages = get_flashed_messages(with_categories=True)%}
-
-            {% for category, message in messages%}
-            <div class="alert alert-{{message}}">
-                <b>{{message}} !</b>
-            </div>
-            {% endfor %}
-
+            {% with messages = get_flashed_messages(with_categories=true)%}
+                {% if messages %}
+                    {% for category, message in messages%}
+                        <div class="alert alert-{{category}}">
+                            <b>{{message}} !</b>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             {% endwith%}
 
             <!-- block is a keyword for defining blocks in a html page-->

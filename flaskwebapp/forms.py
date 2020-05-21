@@ -47,7 +47,7 @@ class LoginForm(FlaskForm):
     # confirm_password = PasswordField('Confirm Password', validators=[DataRequired(),EqualTo('password')])
 
     # Adding a remmeber me option
-    remmeber = BooleanField('Remember Me...')
+    remember = BooleanField('Remember Me...')
 
     # Add a form submit element
     submit = SubmitField('Login')

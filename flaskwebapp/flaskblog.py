@@ -71,12 +71,11 @@ def register():
     # Here we shall include validated_on_submit() in order to avoid such issue
     if form.validate_on_submit():
         # output_success = 'Account created for user {}'.format('form.username.data')
-        flash(f'Account created for user {form.username.data}', 'success')
+        flash(f'Account created for {form.username.data} !', 'success')
         return redirect(url_for('home'))
 
     # And pass thi regitration form object to render_template() to include it's webelements
     return render_template('register.html', title='Register Here', form=form)
-
 
 # Almost the same thing goes here (Same as register())
 @app.route("/login")
