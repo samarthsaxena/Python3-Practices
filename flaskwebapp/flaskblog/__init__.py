@@ -37,4 +37,5 @@ app.config['MAIL_PASSWORD'] = os.environ.get('TEST_EMAIL_PASS')
 # now initialize these to mail
 mail = Mail(app)
 
+# CRITICAL !!
 from flaskblog import routes
