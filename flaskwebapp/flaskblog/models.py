@@ -1,8 +1,10 @@
+# will be used for time expiration of token
 from datetime import datetime
 
-from flaskblog import db, login_manager
 # Default implementation of all flask_login necessary methods
 from flask_login import UserMixin
+from flaskblog import db, login_manager, app
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 @login_manager.user_loader
@@ -27,6 +29,25 @@ class User(db.Model, UserMixin):
     # BUT a post can have only 1 author, so to define this we have posts relationship in User model
     posts = db.relationship('Post', backref='author',
                             lazy=True)  # backref is just to add the extra attribute to Post model, on the fly.
+
+    # generate the token for reset password action
+    def get_reset_token(self, expires_sec=1800):
+        # 1800 is just 30 Min(s)
+        s = Serializer(app.config.get('SECRET_KEY'), expires_sec)
+        return s.dumps({'user_id': self.id}).decode('UTF-8')
+
+    # Now to verify the legitimacy of token we need to have some logic in place here
+    # this will be a static method for the app
+    @staticmethod
+    def verify_reset_token(token):
+        s = Serializer(app.config.get('SECRET_KEY'))
+
+        try:
+            user_id = s.loads(token)['user_id']
+        except:
+            return None
+
+        return User.query.get(user_id)
 
     # Override the __repr__ to know what's going on with the user object
     def __repr__(self):
