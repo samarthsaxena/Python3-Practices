@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-
-from flask_login import current_user
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_login import current_user
 from flaskblog.models import User
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
-from wtforms.validators import Length, DataRequired, Email, EqualTo, ValidationError
 
 
 # For Registering the users in blog
@@ -92,11 +90,6 @@ class UpdateAccountForm(FlaskForm):
             if user_email:
                 raise ValidationError(f'Email ID "{email.data}" is already taken ! Please use different Email ID')
 
-
-class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
 
 
 class RequestResetForm(FlaskForm):

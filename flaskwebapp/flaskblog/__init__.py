@@ -7,35 +7,48 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 # To send emails from application to users
 from flask_mail import Mail
+#Use the config.py to import configurations
+from flaskblog.config import Config
 
-# Initialize this App to FlaskApp
-app = Flask(__name__)
 
-# Add a secret key to Application, in order to protect against Xss and hacks
-# Generated from python3 secrets module with token_hex(soem int value)
-app.config['SECRET_KEY'] = '5e088df2bf772df379b5a0da138f2ebb'
-# To work wit DB, we'd use sqlite db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
+db = SQLAlchemy()
+bcrypt = Bcrypt()
+login_manager = LoginManager()
 login_manager.login_view = 'login'  # name of the function that handles /login req(s)
 # login_manager.login_message = 'Please log in to access this view.'
 login_manager.login_message_category = 'info'  # Just adding nice blue colored category from bootstrap
 
-# SMTP Configurations
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-# the gmail account's username and password is better being hidden
-# The required data is good to have in environment variables or some encrypted config file on server.
-# for now let's just use the environment variables
-app.config['MAIL_USERNAME'] = os.environ.get('TEST_EMAIL_USER')
-app.config['MAIL_PASSWORD'] = os.environ.get('TEST_EMAIL_PASS')
-
 # now initialize these to mail
-mail = Mail(app)
+mail = Mail()
 
-# CRITICAL !!
-from flaskblog import routes
+
+# To create multiple instances of the application,
+# it is better to have some function that can externalize the app
+# To all of the above extensions, we'd pass the app from this functions,
+# Reason: on the fly, every new instance whenever externalized, will get those extensions at runtime for themselves.
+def create_app(config_class=Config):
+    # Initialize this App to FlaskApp
+    app = Flask(__name__)
+
+    # Pass config object to app
+    app.config.from_object(config_class)
+
+    # Assign extensions here for every instance of this application
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+    mail.init_app(app)
+
+    # CRITICAL Blueprints!!
+    from flaskblog.users.routes import users
+    from flaskblog.posts.routes import posts
+    from flaskblog.main.routes import main
+    # Now register the blueprints with application 'app'
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+
+    # When created return the application instance
+    return app
+
+

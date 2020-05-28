@@ -44,7 +44,7 @@
             {{form.submit(class="btn btn-outline-info")}}
         </div>
         <small class="text-muted ml-2">
-            <a href="{{ url_for('reset_request') }}">Forgot password?</a>
+            <a href="{{ url_for('users.reset_request') }}">Forgot password?</a>
         </small>
 
     </form>
@@ -55,7 +55,7 @@
         <!-- here {{url_for('login')}}  : login is the name of the route function
         It is NOT a uri /login
        -->
-        Want an account ? <a class="ml-2" href="{{url_for('register')}}">Register here!</a>
+        Want an account ? <a class="ml-2" href="{{url_for('users.register')}}">Register here!</a>
     </small>
 
 </div>

@@ -1,15 +1,15 @@
 # will be used for time expiration of token
 from datetime import datetime
-
+from flask import current_app
 # Default implementation of all flask_login necessary methods
 from flask_login import UserMixin
-from flaskblog import db, login_manager, app
+from flaskblog import db, login_manager
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    # in order to work with login manager, we'd need a mechanism to make login_manager aware of the schema and the way app queries the db
+    # in order to work with login manager, we'd need a mechanism to make login_manager aware of the schema and the way current_app queries the db
     return User.query.get(int(user_id))
 
 
@@ -33,14 +33,14 @@ class User(db.Model, UserMixin):
     # generate the token for reset password action
     def get_reset_token(self, expires_sec=1800):
         # 1800 is just 30 Min(s)
-        s = Serializer(app.config.get('SECRET_KEY'), expires_sec)
+        s = Serializer(current_app.config.get('SECRET_KEY'), expires_sec)
         return s.dumps({'user_id': self.id}).decode('UTF-8')
 
     # Now to verify the legitimacy of token we need to have some logic in place here
-    # this will be a static method for the app
+    # this will be a static method for the current_app
     @staticmethod
     def verify_reset_token(token):
-        s = Serializer(app.config.get('SECRET_KEY'))
+        s = Serializer(current_app.config.get('SECRET_KEY'))
 
         try:
             user_id = s.loads(token)['user_id']
