@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Test Page</title>
+    <meta content="0; URL={{url_for('main.home')}}" http-equiv="refresh">
 </head>
-<body>
+<body background="">
 <h1>Test Page</h1>
-<a href="http://127.0.0.1:5000/">Goto Home</a>
+<a href="{{ url_for('main.home') }}">Goto Home</a>
 </body>
 </html>
