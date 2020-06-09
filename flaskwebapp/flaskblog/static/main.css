@@ -1,11 +1,18 @@
 body {
   background: #fafafa;
   color: #333333;
-  margin-top: 5rem;
+  margin-top: 5em; /*5rem;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    margin-bottom: 1em;
 }
 
 .bg-steel {
@@ -32,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
+article:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .article-title {
   color: #444444;
 }
@@ -49,6 +60,7 @@ a.article-title:hover {
   height: 65px;
   width: 65px;
   margin-right: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .article-metadata {
