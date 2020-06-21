@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    <link crossorigin="anonymous" href="{{ url_for('static',filename='bootstrap.min.css') }}"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 
     <!-- added url_for from Flask -->
@@ -17,8 +17,6 @@
     {%endif%}
 </head>
 <body>
-<!-- header tag is a code snippet from https://github.com/CoreyMSchafer/code_snippets/blob/master/Python/Flask_Blog/snippets/navigation.html-->
-
 <header class="site-header">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container p-3">
@@ -67,7 +65,7 @@
                 <img alt="Thought 1" src="{{ url_for('static', filename='carousel_pics/ann_landers_1.jpg') }}">
             </div>
             <div class="carousel-item">
-                <img alt="Thought 2" src="{{ url_for('static', filename='carousel_pics/samarth_1.jpg') }}">
+                <img alt="Thought 2" src="{{ url_for('static', filename='carousel_pics/samarth_2.jpg') }}">
             </div>
             <div class="carousel-item">
                 <img alt="Thought 3" src="{{ url_for('static', filename='carousel_pics/william_wordswoth_1.jpg') }}">
@@ -99,8 +97,8 @@
             <!-- content is user defined section of a page -->
             {% block content %}{% endblock %}
         </div>
-        <div class="col-md-4" data-toggle="tooltip" title="You can put any information here you'd like.">
-            <div class="content-section">
+        <div class="col-md-4">
+            <div class="content-section" data-toggle="tooltip" title="You can put any information here you'd like.">
                 <h3>Quick Access Panel</h3>
                 <!-- <p class='text-muted'>You can put any information here you'd like. -->
                 <p class='text-muted'>
@@ -119,13 +117,13 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script crossorigin="anonymous"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        src="{{ url_for('static',filename='jquery-3.3.1.slim.min.js') }}"></script>
 <script crossorigin="anonymous"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        src="{{ url_for('static',filename='popper.min.js') }}"></script>
 <script crossorigin="anonymous"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        src="{{ url_for('static',filename='bootstrap.min.js') }}"></script>
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
