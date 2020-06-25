@@ -1,0 +1,7 @@
+{
+  "SECRET_KEY": "5e088df2bf772df379b5a0da138f2ebb",
+  "SQLALCHEMY_DATABASE_URI": "sqlite:///site.db",
+  "TEST_EMAIL_USER": "aa.test.novell@gmail.com",
+  "TEST_EMAIL_PASS": "novell@123",
+  "CONFIG_DIR_PATH": "D:\\Studies\\Python\\flaskwebapp\\flaskblog\\config_vars\\"
+}
