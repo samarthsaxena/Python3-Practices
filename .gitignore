@@ -3,3 +3,4 @@ venv
 Practices/TestStuffs_DontCommit.py
 __pycache__
 README.md
+config.json
