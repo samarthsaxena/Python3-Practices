@@ -1,0 +1,5 @@
+name,phone,email,size,toppings,time,instructions
+user1,1234567890,user1@test.test,small,onion,12:00,please ring
+user2,1243567890,user2@test.test,large,cheeze,1:00,please do notring
+user3,1234567809,user3@test.test,medium,paneer,19:00,please leave
+user4,2134567890,user4@test.test,small,chicken,2:00,please ring

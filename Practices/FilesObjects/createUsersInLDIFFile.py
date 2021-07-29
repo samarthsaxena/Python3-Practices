@@ -81,7 +81,7 @@ def readDataWrittenInFile(fileName):
     with open(fileName,'r') as file:
         line=file.readline()
         print('*\n'*10)
-        file.seek(os.path.getsize(file.))
+        #file.seek(os.path.getsize(file.))
         while line:
             line=file.readline()
             print(line)
