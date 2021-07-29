@@ -10,7 +10,7 @@ class IDPAuthnTests(SequentialTaskSet):
 
     @task
     def nidp_portal(self):
-        with self.client.get("", catch_response=True, name="User login page") as response:
+        with self.client.get("/nidp/app/login", catch_response=True, name="User login page") as response:
             print("Got response:",response.text)
             print("Got response code:", response.status_code)
             if "login" in response.text and response.elapsed.total_seconds() < 10.0:
@@ -22,5 +22,5 @@ class IDPAuthnTests(SequentialTaskSet):
 
 class TestUserAuthenticationLoad(HttpUser):
     wait_time = constant(2)
-    host = "https://node1.cluster.local:8443/nidp"
+    host = "https://node1.cluster.local:8443"
     tasks = [IDPAuthnTests]
